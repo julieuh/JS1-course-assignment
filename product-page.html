@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Quality rain jackets for men and women" />
-    <title>Rainydays | Home</title>
+    <meta
+      name="description"
+      content="Patagonia Better Sweater Fleece Jacket for cold weather"
+    />
+    <title>Rainydays | Product page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,8 +19,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/products.css" />
+    <link rel="stylesheet" href="css/product-page.css" />
   </head>
-  <body class="home">
+  <body>
     <header>
       <div class="banner">
         <ul>
@@ -142,62 +147,7 @@
     </header>
 
     <main>
-      <section class="slogan-area">
-        <h1>Quality clothing for your next adventure</h1>
-        <p>- Pushing the comfort zone</p>
-      </section>
-
-      <section class="product-section">
-        <h2>Our Products</h2>
-        <div id="product-grid" class="product-grid"></div>
-      </section>
-
-      <section class="category-img">
-        <div>
-          <a href="products.html" class="category-link">
-            <img
-              src="images/man_river.jpg"
-              alt="Man in a yellow and black rain jacket sitting by the river"
-              class="category-pictures"
-              loading="lazy"
-            />
-            <h2>All Products</h2>
-          </a>
-        </div>
-        <div>
-          <a href="products.html" class="category-link">
-            <img
-              src="images/women_mountain.jpg"
-              alt="Woman in a green jacket walking in the snowcapped mountains"
-              class="category-pictures"
-              loading="lazy"
-            />
-            <h2>Women</h2>
-          </a>
-        </div>
-        <div>
-          <a href="products.html" class="category-link">
-            <img
-              src="images/man_lake.jpg"
-              alt="Man in a blue jacket standing by a lake"
-              class="category-pictures"
-              loading="lazy"
-            />
-            <h2>Men</h2>
-          </a>
-        </div>
-        <div>
-          <a href="products.html" class="category-link">
-            <img
-              src="images/bikes_woman.jpg"
-              alt="Woman cycling in the rain wearing a black cycling jacket"
-              class="category-pictures"
-              loading="lazy"
-            />
-            <h2>Sports Jackets</h2>
-          </a>
-        </div>
-      </section>
+      <section id="product-details"></section>
     </main>
 
     <footer>
@@ -213,28 +163,7 @@
             <li>FAQ</li>
           </ul>
         </div>
-        <div>
-          <h3>Contact us</h3>
-          <div>
-            <a href="index.html" class="cta-button cta-button-small"
-              >Contact us</a
-            >
-          </div>
-          <div class="payment-logos">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Klarna_Logo_black.svg"
-              alt="Klarna logo"
-            />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"
-              alt="Visa logo"
-            />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png"
-              alt="Mastercard logo"
-            />
-          </div>
-        </div>
+
         <div>
           <h3>Follow us</h3>
           <ul class="footer-social-icons">
@@ -244,6 +173,6 @@
         </div>
       </section>
     </footer>
-    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/product.js"></script>
   </body>
 </html>
