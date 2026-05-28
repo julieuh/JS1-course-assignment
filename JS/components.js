@@ -1,24 +1,19 @@
 // product cards
 export function renderProductCard(product) {
-    return `
+  return `
         <div class="product-card">
             <img src="${product.image.url}" alt="${product.image.alt}">
             <h3>${product.title}</h3>
             <p>${product.price} kr</p>
-            <a href="product-page.html?id=${product.id}">View product</a>
+            <a href="product.html?id=${product.id}">View product</a>
         </div>
     `;
 }
 
-
-
-
-
-
 // product details
 
 export function renderProductDetails(product) {
-    return `
+  return `
         <div class="product-page">
             <div class="product-image">
                 <img src="${product.image.url}" alt="${product.image.alt}">
