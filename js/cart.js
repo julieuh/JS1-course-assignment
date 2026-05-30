@@ -30,3 +30,25 @@ export function addToCart(product) {
 
     saveCart(cart);
 }
+
+// remove one item from cart
+export function removeFromCart(productId) {
+    const cart = getCart();
+    const item = cart.find(item => item.id === productId);
+
+    if (item && item.quantity > 1) {
+        item.quantity -= 1;
+    } else {
+        // remove completely if quantity is 1
+        cart = cart.filter(item => item.id !== productId);
+    }
+
+    saveCart(cart);
+}
+
+// delete product completely from cart
+export function deleteFromCart(productId) {
+    const cart = getCart();
+    const updatedCart = cart.filter(item => item.id !== productId);
+    saveCart(updatedCart);
+}
