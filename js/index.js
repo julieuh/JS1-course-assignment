@@ -1,5 +1,6 @@
 import { fetchProducts } from "./api/fetchProducts.js";
 import { renderProductCard } from "./components.js";
+import "./utils.js"; // Load cart count display
 
 async function init() {
     const container = document.getElementById("product-grid");

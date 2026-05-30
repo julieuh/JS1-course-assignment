@@ -1,5 +1,7 @@
 import { fetchOneProduct } from "./api/fetchOneProduct.js";
 import { renderProductDetails } from "./components.js";
+import { addToCart } from "./cart.js";
+import { updateCartCount } from "./utils.js";
 
 async function init() {
     const container = document.getElementById("product-details");
@@ -17,26 +19,16 @@ async function init() {
     try {
         const product = await fetchOneProduct(id);
         container.innerHTML = renderProductDetails(product);
+
+        // Add to cart functionality
+        const button = document.querySelector(".add-to-cart-btn");
+        button.addEventListener("click", () => {
+            addToCart(product);
+            updateCartCount();
+        });
     } catch (error) {
         container.innerHTML = "<p>Could not fetch product.</p>";
     }
 }
 
 init();
-
-
-
-// Add to cart functionality
-
-import { addToCart } from "./cart.js";
-
-container.innerHTML = renderProductDetails(product);
-
-// Finn knappen
-const button = document.querySelector(".add-to-cart-btn");
-
-// Legg til event listener
-button.addEventListener("click", () => {
-    addToCart(product);
-    alert("Added to cart!");
-});

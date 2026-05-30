@@ -1,4 +1,5 @@
 import { getCart } from "./cart.js";
+import "./utils.js"; // Load cart count display
 
 const container = document.getElementById("cart-container");
 const cart = getCart();
