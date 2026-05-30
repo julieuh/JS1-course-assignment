@@ -22,10 +22,14 @@ main h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: 10px 28px;
-  border-radius: 999px;
-  font-weight: 600;
+  margin-top: 1.5rem;
+  padding: 8px 16px;
+  background-color: #294f58;
+  color: #fff;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 .product-img img {
@@ -124,4 +128,25 @@ main h1 {
 .quantity {
     color: #666;
     font-size: 0.9rem;
+}
+
+
+.checkout-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.checkout-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.checkout-total {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
 }

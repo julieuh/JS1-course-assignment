@@ -188,8 +188,18 @@ header nav.category-links {
 }
 
 .cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
   background-color: #294f58;
   color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .cta-button-small {
@@ -581,7 +591,7 @@ footer .footer-social-icons {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   padding: 2rem 0;
 }
