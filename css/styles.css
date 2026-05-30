@@ -293,14 +293,14 @@ footer .footer-social-icons {
   }
 }
 
-/* Hamburger-meny */
+/* Hamburger-menu */
 .menu-toggle {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
-/* Hamburger ikon (vises ikke på desktop) */
+/* Hamburger icon (not shown on desktop) */
 .hamburger {
   display: none;
   width: 28px;
@@ -329,7 +329,7 @@ footer .footer-social-icons {
   top: 19px;
 }
 
-/* Desktop - vis menyen horisontalt, skjul hamburger */
+/* Desktop - show menu horizontally, hide hamburger */
 @media (min-width: 769px) {
   .category-links .menu {
     display: flex;

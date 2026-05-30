@@ -23,3 +23,20 @@ async function init() {
 }
 
 init();
+
+
+
+// Add to cart functionality
+
+import { addToCart } from "./cart.js";
+
+container.innerHTML = renderProductDetails(product);
+
+// Finn knappen
+const button = document.querySelector(".add-to-cart-btn");
+
+// Legg til event listener
+button.addEventListener("click", () => {
+    addToCart(product);
+    alert("Added to cart!");
+});
