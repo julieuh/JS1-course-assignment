@@ -622,6 +622,26 @@ footer .footer-social-icons {
   font-weight: 500;
 }
 
+.price {
+  margin: 0.75rem 0 0.5rem;
+  color: #284646;
+}
+
+.price--sale {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #8a8a8a;
+}
+
+.price-new {
+  font-weight: 700;
+  color: #d43838;
+}
 
 .product-grid {
   max-width: 1200px;

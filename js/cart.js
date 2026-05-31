@@ -9,12 +9,31 @@ export function saveCart(cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+function parsePrice(price) {
+    if (typeof price === 'number') {
+        return price;
+    }
+    if (!price) {
+        return 0;
+    }
+
+    return Number(String(price).replace(',', '.').replace(/[^0-9.\-]/g, '')) || 0;
+}
+
+function getCartPrices(product) {
+    const originalPrice = parsePrice(product.price);
+    const discountedPrice = parsePrice(product.discountedPrice ?? product.price);
+    const price = discountedPrice < originalPrice ? discountedPrice : originalPrice;
+    return { price, originalPrice };
+}
+
 // add product to cart
 export function addToCart(product) {
     const cart = getCart();
 
     // check if product already exists in cart
     const existing = cart.find(item => item.id === product.id);
+    const { price, originalPrice } = getCartPrices(product);
 
     if (existing) {
         existing.quantity += 1;
@@ -22,7 +41,8 @@ export function addToCart(product) {
         cart.push({
             id: product.id,
             title: product.title,
-            price: product.price,
+            price,
+            originalPrice,
             image: product.image.url,
             quantity: 1
         });
@@ -38,12 +58,12 @@ export function removeFromCart(productId) {
 
     if (item && item.quantity > 1) {
         item.quantity -= 1;
-    } else {
-        // remove completely if quantity is 1
-        cart = cart.filter(item => item.id !== productId);
+        saveCart(cart);
+        return;
     }
 
-    saveCart(cart);
+    const updatedCart = cart.filter(item => item.id !== productId);
+    saveCart(updatedCart);
 }
 
 // delete product completely from cart

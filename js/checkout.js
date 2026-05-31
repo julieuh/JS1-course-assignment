@@ -3,6 +3,23 @@ import { getCart } from "./cart.js";
 const container = document.getElementById("checkout-summary");
 const button = document.getElementById("complete-order-btn");
 
+function formatPrice(price) {
+    return `${price.toFixed(2).replace('.', ',')} kr`;
+}
+
+function renderItemPrice(item) {
+    if (item.originalPrice && item.originalPrice > item.price) {
+        return `
+            <div class="price price--sale">
+                <span class="price-old">${formatPrice(item.originalPrice)}</span>
+                <span class="price-new">${formatPrice(item.price)}</span>
+            </div>
+        `;
+    }
+
+    return `<p class="price">${formatPrice(item.price)}</p>`;
+}
+
 const cart = getCart();
 
 if (cart.length === 0) {
@@ -19,7 +36,7 @@ if (cart.length === 0) {
                 <img src="${item.image}" alt="${item.title}">
                 <div>
                     <h3>${item.title}</h3>
-                    <p>${item.price} kr</p>
+                    ${renderItemPrice(item)}
                     <p>Quantity: ${item.quantity}</p>
                 </div>
             </div>
@@ -28,7 +45,7 @@ if (cart.length === 0) {
 
     container.innerHTML += `
         <div class="checkout-total">
-            <h2>Total: ${total} kr</h2>
+            <h2>Total: ${formatPrice(total)}</h2>
         </div>
     `;
 }

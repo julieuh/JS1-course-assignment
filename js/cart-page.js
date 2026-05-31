@@ -5,6 +5,23 @@ import { updateCartCount } from "./utils.js";
 
 const container = document.getElementById("cart-container");
 
+function formatPrice(price) {
+    return `${price.toFixed(2).replace('.', ',')} kr`;
+}
+
+function renderItemPrice(item) {
+    if (item.originalPrice && item.originalPrice > item.price) {
+        return `
+            <div class="price price--sale">
+                <span class="price-old">${formatPrice(item.originalPrice)}</span>
+                <span class="price-new">${formatPrice(item.price)}</span>
+            </div>
+        `;
+    }
+
+    return `<p class="price">${formatPrice(item.price)}</p>`;
+}
+
 function renderCart() {
     const cart = getCart();
 
@@ -16,7 +33,7 @@ function renderCart() {
                 <img src="${item.image}" alt="${item.title}">
                 <div class="cart-item-info">
                     <h3>${item.title}</h3>
-                    <p>${item.price} kr</p>
+                    ${renderItemPrice(item)}
                     <div class="cart-item-controls">
                         <button class="btn-remove" data-id="${item.id}">−</button>
                         <span class="quantity">Quantity: ${item.quantity}</span>
