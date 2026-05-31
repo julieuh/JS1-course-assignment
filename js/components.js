@@ -16,7 +16,7 @@ function isDiscounted(product) {
 }
 
 function formatPrice(price) {
-  return `${price} kr`;
+  return `${price} $`;
 }
 
 function renderPrice(product) {

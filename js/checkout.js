@@ -4,7 +4,7 @@ const container = document.getElementById("checkout-summary");
 const button = document.getElementById("complete-order-btn");
 
 function formatPrice(price) {
-    return `${price.toFixed(2).replace('.', ',')} kr`;
+    return `${price.toFixed(2).replace('.', ',')} $`;
 }
 
 function renderItemPrice(item) {

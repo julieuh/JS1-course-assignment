@@ -6,7 +6,7 @@ import { updateCartCount } from "./utils.js";
 const container = document.getElementById("cart-container");
 
 function formatPrice(price) {
-    return `${price.toFixed(2).replace('.', ',')} kr`;
+    return `${price.toFixed(2).replace('.', ',')} $`;
 }
 
 function renderItemPrice(item) {
@@ -37,7 +37,7 @@ function renderCart() {
                     <div class="cart-item-controls">
                         <button class="btn-remove" data-id="${item.id}">−</button>
                         <span class="quantity">Quantity: ${item.quantity}</span>
-                        <button class="btn-delete" data-id="${item.id}">Slett</button>
+                        <button class="btn-delete" data-id="${item.id}">Delete item(s)</button>
                     </div>
                 </div>
             </div>
