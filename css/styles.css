@@ -648,3 +648,8 @@ footer .footer-social-icons {
   margin: 0 auto;
   padding-top: 1.5rem;
 }
+
+
+body ul li a {
+  text-decoration: underline
+}
