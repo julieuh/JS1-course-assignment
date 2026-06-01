@@ -32,38 +32,6 @@ main h1 {
   text-decoration: none;
 }
 
-.product-img img {
-  display: block;
-  width: 100%;
-  max-width: 520px;
-  aspect-ratio: 3 / 4;
-  object-fit: contain;
-  background: #ffffff;
-  border-radius: 12px;
-}
-
-
-.product-info {
-  background-color: #ffffff;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-}
-
-
-@media (max-width: 930px) {
-    .product-info {
-    display: grid;
-    grid-template-columns: 1fr;
-    flex-wrap: wrap;
-    }
-
-    .product-info h2 {
-    margin: 0px;
-    font-size: 1.5em;
-    }
-}
-
 /* Cart items styling */
 .cart-item {
     display: flex;

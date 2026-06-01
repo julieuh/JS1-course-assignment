@@ -28,7 +28,7 @@ async function init() {
 
     } catch (error) {
         console.error("Error loading products:", error.message);
-        container.innerHTML = `<p>Kunne ikke laste produkter: ${error.message}</p>`;
+        container.innerHTML = `<p>Could not load products: ${error.message}</p>`;
     }
 }
 
