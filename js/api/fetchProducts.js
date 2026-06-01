@@ -5,14 +5,21 @@ export async function fetchProducts() {
 
     try {
         const response = await fetch(url);
+        
         if (!response.ok) {
-            throw new Error("Failed to fetch products");
+            console.error(`API Error - Status: ${response.status} ${response.statusText}`);
+            throw new Error(`API error: ${response.status} ${response.statusText}`);
         }
 
         const data = await response.json();
-        return data.data; // API returnerer data inni data.data
+        
+        if (!data.data || !Array.isArray(data.data)) {
+            throw new Error("Invalid API response format");
+        }
+        
+        return data.data;
     } catch (error) {
-        console.error(error);
+        console.error("Failed to fetch products:", error.message);
         throw error;
     }
 }
