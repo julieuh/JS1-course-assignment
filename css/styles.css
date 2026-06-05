@@ -534,6 +534,10 @@ footer section ul {
 
 /* Added for the new JS page */
 
+body ul li a {
+  text-decoration: underline
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -600,14 +604,46 @@ footer section ul {
   padding: 2rem;
 }
 
+/* Product page */
+
 .product-page {
   max-width: 900px;
   margin: 0 auto;
 }
 
-body ul li a {
-  text-decoration: underline
+.product-image img {
+  max-width: 600px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
 }
+
+.product-info {
+  padding: 1rem 0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.product-page {
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.add-to-cart-btn {
+  margin-top: auto;
+  padding: 8px 16px;
+  background-color: #294f58;
+  color: #fff;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+/* Loading indicator */
 
 .loader-container {
   display: flex;
