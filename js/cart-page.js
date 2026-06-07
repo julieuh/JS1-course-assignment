@@ -4,6 +4,7 @@ import { removeFromCart, deleteFromCart } from "./cart.js";
 import { updateCartCount } from "./utils.js";
 
 const container = document.getElementById("cart-container");
+const checkoutButton = document.querySelector(".checkout-button");
 
 function formatPrice(price) {
     return `${price.toFixed(2).replace('.', ',')} $`;
@@ -24,6 +25,10 @@ function renderItemPrice(item) {
 
 function renderCart() {
     const cart = getCart();
+
+    if (checkoutButton) {
+        checkoutButton.style.display = cart.length > 0 ? "inline-block" : "none";
+    }
 
     if (cart.length === 0) {
         container.innerHTML = "<p>Your cart is empty.</p>";
