@@ -61,9 +61,12 @@ export function renderProductDetails(product) {
                 <p>${product.description}</p>
                 ${renderPrice(product)}
 
-                <button data-id="${product.id}" class="add-to-cart-btn">
-                    Add to cart
-                </button>
+                <div class="add-to-cart-wrapper">
+                    <button data-id="${product.id}" class="add-to-cart-btn">
+                        Add to cart
+                    </button>
+                    <span class="add-to-cart-feedback" aria-hidden="true">+1</span>
+                </div>
             </div>
         </div>
     `;

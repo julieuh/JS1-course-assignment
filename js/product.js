@@ -27,10 +27,19 @@ async function init() {
         // Add to cart functionality
         const button = document.querySelector(".add-to-cart-btn");
         if (button) {
+            const wrapper = button.closest(".add-to-cart-wrapper");
+            const feedback = wrapper?.querySelector(".add-to-cart-feedback");
+
             button.addEventListener("click", () => {
                 try {
                     addToCart(product);
                     updateCartCount();
+
+                    if (feedback) {
+                        feedback.classList.add("show");
+                        window.setTimeout(() => feedback.classList.remove("show"), 800);
+                    }
+
                     console.log("Product added to cart:", product.title);
                 } catch (err) {
                     console.error("Error adding product to cart:", err.message);
