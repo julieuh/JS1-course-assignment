@@ -1,3 +1,4 @@
+import "./utils.js";
 import { getCart } from "./cart.js";
 
 const container = document.getElementById("checkout-summary");

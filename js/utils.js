@@ -5,6 +5,7 @@ import { getCart } from "./cart.js";
 export function updateCartCount() {
     const cart = getCart();
     const cartLink = document.querySelector(".cart");
+    if (!cartLink) return;
     
     let badge = cartLink.querySelector(".badge");
     
@@ -15,7 +16,13 @@ export function updateCartCount() {
     }
     
     const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
-    badge.textContent = itemCount > 0 ? itemCount : "";
+    if (itemCount > 0) {
+        badge.textContent = itemCount;
+        badge.style.display = "inline-flex";
+    } else {
+        badge.textContent = "";
+        badge.style.display = "none";
+    }
 }
 
 // Initialize cart count on page load
